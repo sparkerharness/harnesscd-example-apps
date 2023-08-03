@@ -57,6 +57,21 @@ pipeline:
                         type: K8sCanaryDelete
                         timeout: 10m
                         spec: {}
+              - step:
+                  type: HarnessApproval
+                  name: HarnessApproval_2
+                  identifier: HarnessApproval_2
+                  spec:
+                    approvalMessage: Please review the following information and approve the pipeline progression
+                    includePipelineExecutionHistory: true
+                    isAutoRejectEnabled: false
+                    approvers:
+                      userGroups:
+                        - _project_all_users
+                      minimumCount: 1
+                      disallowPipelineExecutor: false
+                    approverInputs: []
+                  timeout: 1d
               - stepGroup:
                   name: Primary Deployment
                   identifier: primaryDepoyment
@@ -68,6 +83,16 @@ pipeline:
                         timeout: 10m
                         spec:
                           skipDryRun: false
+              - step:
+                  type: Email
+                  name: Email_1
+                  identifier: Email_1
+                  spec:
+                    to: spencer.parker@harness.io
+                    cc: ""
+                    subject: Deployment of Guestboook is complete
+                    body: The Guestbook has been deployed
+                  timeout: 10m
             rollbackSteps:
               - step:
                   name: Canary Delete
