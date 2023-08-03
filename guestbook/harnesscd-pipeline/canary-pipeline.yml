@@ -1,7 +1,7 @@
 pipeline:
   name: guestbook_canary_pipeline
   identifier: guestbook_canary_pipeline
-  projectIdentifier: default_project
+  projectIdentifier: SparkerSalesDemo
   orgIdentifier: default
   tags: {}
   stages:
