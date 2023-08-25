@@ -4,7 +4,7 @@ infrastructureDefinition:
   description: ""
   tags: {}
   orgIdentifier: default
-  projectIdentifier: default_project
+  projectIdentifier: SparkerSalesDemo
   environmentRef: harnessdevenv
   deploymentType: Kubernetes
   type: KubernetesDirect
