@@ -18,7 +18,7 @@ pipeline:
             environmentRef: harnessdevenv
             deployToAll: false
             infrastructureDefinitions:
-              - identifier: harnessk8sinfra
+              - identifier: harness_k8sinfra
           execution:
             steps:
               - step:
